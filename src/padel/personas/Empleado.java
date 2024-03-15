@@ -18,15 +18,8 @@ public class Empleado extends Persona {
 	}
 	
 	@Override
-	public boolean equals(Object obj) {
-		Empleado otra = (Empleado) obj;
-		boolean result = false;
-		
-		if(this.getDni().equals(otra.getDni())) {
-			result = true;
-		}
-		
-		return result;
+	public void mostrarInformacion() {
+		System.out.println(this.toString());
 	}
 	
 	@Override
@@ -37,11 +30,6 @@ public class Empleado extends Persona {
 		+ ", codEmpleado=" + this.codEmpleado + "]";
 	}
 
-	@Override
-	public void mostrarInformacion() {
-		
-		System.out.println(this.toString());
-		
-	}
+
 
 }

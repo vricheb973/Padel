@@ -12,7 +12,7 @@ public class Partido {
 	private String descripcion;
 	private Empleado empleado;
 	private int numJugadores;
-	private Jugador[] jugadores;
+	private Jugador jugadores[];
 	private LocalDate firmaEmpleado;
 	private LocalDate firmaJugadores;
 
@@ -110,12 +110,9 @@ public class Partido {
 		this.firmaEmpleado = LocalDate.now();
 	}
 
-	public void reservar(Jugador jugadores[]) {
+	public void reservar() {
 		if(!this.completo()) {
 			throw new IllegalStateException("Faltan jugadores por asignar. ");
-		}
-		if(this.firmaJugadores != null) {
-			throw new IllegalStateException("El partido ya está firmado por los jugadores. ");
 		}
 		this.firmaJugadores = LocalDate.now();
 	}
@@ -125,9 +122,10 @@ public class Partido {
 		
 		if(this.firmaJugadores != null) {
 			result = "RESERVADA";
-		}
-		if(this.firmaEmpleado != null) {
-			result = "CONFIRMADA";
+
+			if(this.firmaEmpleado != null) {
+				result = "CONFIRMADA";
+			}
 		}
 		
 		return result;

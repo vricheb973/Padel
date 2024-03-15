@@ -16,17 +16,10 @@ public class Profesional extends Jugador {
 	public void setPuntoFuerte(String puntoFuerte) {
 		this.puntoFuerte = puntoFuerte;
 	}
-	
+
 	@Override
-	public boolean equals(Object obj) {
-		Profesional otra = (Profesional) obj;
-		boolean result = false;
-		
-		if(this.getDni().equals(otra.getDni())) {
-			result = true;
-		}
-		
-		return result;
+	public void mostrarInformacion() {
+		System.out.println(this.toString());
 	}
 	
 	@Override
@@ -36,13 +29,6 @@ public class Profesional extends Jugador {
 		+ ", dni=" + this.getDni() 
 		+ ", codSocio=" + this.getCodSocio() 
 		+ ", puntoFuerte=" + this.puntoFuerte + "]";
-	}
-
-	@Override
-	public void mostrarInformacion() {
-		
-		System.out.println(this.toString());
-		
 	}
 
 }

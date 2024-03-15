@@ -13,7 +13,7 @@ public abstract class Persona {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String nombre) {
@@ -21,7 +21,7 @@ public abstract class Persona {
 	}
 
 	public String getApellidos() {
-		return apellidos;
+		return this.apellidos;
 	}
 
 	public void setApellidos(String apellidos) {
@@ -38,6 +38,8 @@ public abstract class Persona {
 		}
 		this.dni = dni;
 	}
+	
+	public abstract void mostrarInformacion();
 
 	@Override
 	public boolean equals(Object obj) {
@@ -51,11 +53,10 @@ public abstract class Persona {
 		return result;
 	}
 
-	@Override
-	public String toString() {
-		return "Persona [nombre=" + this.nombre + ", apellidos=" + this.apellidos + ", dni=" + this.dni + "]";
-	}
-	
-	public abstract void mostrarInformacion();
+//	@Override
+//	public String toString() {
+//		return "Persona [nombre=" + this.nombre + ", apellidos=" + this.apellidos + ", dni=" + this.dni + "]";
+//	}
+
 
 }

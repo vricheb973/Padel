@@ -16,17 +16,10 @@ public class Amateur extends Jugador {
 	public void setPuntoDebil(String puntoDebil) {
 		this.puntoDebil = puntoDebil;
 	}
-	
+
 	@Override
-	public boolean equals(Object obj) {
-		Amateur otra = (Amateur) obj;
-		boolean result = false;
-		
-		if(this.getDni().equals(otra.getDni())) {
-			result = true;
-		}
-		
-		return result;
+	public void mostrarInformacion() {
+		System.out.println(this.toString());
 	}
 	
 	@Override
@@ -36,13 +29,6 @@ public class Amateur extends Jugador {
 		+ ", dni=" + this.getDni() 
 		+ ", codSocio=" + this.getCodSocio() 
 		+ ", puntoDebil=" + this.puntoDebil + "]";
-	}
-
-	@Override
-	public void mostrarInformacion() {
-		
-		System.out.println(this.toString());
-		
 	}
 
 }

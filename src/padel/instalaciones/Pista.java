@@ -8,7 +8,7 @@ public class Pista {
 	
 	public Pista(int numero, String tipoPista, String ubicacionPista) {
 		this.numero = numero;
-		this.tipoPista = TipoPista.valueOf(ubicacionPista);
+		setTipoPista(tipoPista);
 		this.ubicacionPista = UbicacionPista.valueOf(ubicacionPista);
 	}
 
@@ -24,16 +24,16 @@ public class Pista {
 		return this.tipoPista.toString();
 	}
 
-	public void setTipoPista(TipoPista tipoPista) {
-		this.tipoPista = tipoPista;
+	public void setTipoPista(String tipoPista) {
+		this.tipoPista = TipoPista.valueOf(tipoPista);
 	}
 
 	public String getUbicacionPista() {
 		return this.ubicacionPista.toString();
 	}
 
-	public void setUbicacionPista(UbicacionPista ubicacionPista) {
-		this.ubicacionPista = ubicacionPista;
+	public void setUbicacionPista(String ubicacionPista) {
+		this.ubicacionPista = UbicacionPista.valueOf(ubicacionPista);
 	}
 
 	@Override
@@ -52,7 +52,9 @@ public class Pista {
 
 	@Override
 	public String toString() {
-		return "Pista [numero=" + this.numero + ", tipoPista=" + this.tipoPista.toString() + ", ubicacionPista=" + this.ubicacionPista.toString() + "]";
+		return "Pista [numero=" + this.numero 
+				+ ", tipoPista=" + this.tipoPista.toString() 
+				+ ", ubicacionPista=" + this.getUbicacionPista() + "]";
 	}
 
 }
